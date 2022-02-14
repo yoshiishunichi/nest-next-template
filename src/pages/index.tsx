@@ -1,4 +1,5 @@
 import type { GetServerSideProps, NextPage } from 'next';
+import Link from 'next/link';
 import { apiClient } from 'src/shared/lib/apiClient';
 import { Story } from 'src/shared/types';
 
@@ -20,7 +21,11 @@ const Home: NextPage<HomeProps> = (props) => {
       <ul>
         {stories.map((story) => (
           <li key={story.id}>
-            {story.id}: {story.title}
+            <Link href={`/${story.id}`}>
+              <a>
+                {story.id}: {story.title}
+              </a>
+            </Link>
           </li>
         ))}
       </ul>

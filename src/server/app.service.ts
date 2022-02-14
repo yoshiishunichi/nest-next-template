@@ -24,4 +24,8 @@ export class AppService {
   getStories() {
     return stories;
   }
+
+  getStory(id: number) {
+    return stories.find((story) => story.id === id) ?? null;
+  }
 }
