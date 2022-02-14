@@ -10,4 +10,9 @@ export class AppController {
   home() {
     return {};
   }
+
+  @Get('/api/stories')
+  public getStories() {
+    return this.appService.getStories();
+  }
 }
