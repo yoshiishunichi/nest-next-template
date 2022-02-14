@@ -1,12 +1,8 @@
 import axios from 'axios';
-
-const nodeEnv = process.env.NODE_ENV ?? 'development';
+import { baseUrl } from '../data/is-prod';
 
 export const apiClient = axios.create({
-  baseURL:
-    nodeEnv === 'production'
-      ? 'https://nest-next-template-in-heroku.herokuapp.com/'
-      : 'http://localhost:3000/',
+  baseURL: baseUrl,
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',
